@@ -24,45 +24,44 @@ ul {
 
 /* Общий контейнер навигации */
 .navbar {
-    position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 10px 0;   /* Внутренние отступы */
-    min-height: 80px;  /* Минимальная высота, ниже которой не опустится */
-    background-color: #000;
-    margin-left: 180px;
-    margin-right: 180px;
+    /* убираем position: relative и большие margin-left/right */
+    padding: 
+    clamp(10px, 2vw, 40px)  /* сверху/снизу */
+    clamp(40px, 12vw, 600px); /* слева/справа */
+    background: #000;
+  }
+  
+  /* Левая часть */
+  .navbar-left img {
+    height: clamp(5px, 5vw, 20px);
+    width: auto;
+  }
+  
+  /* Правая часть */
+  .navbar-right img {
+    height: clamp(20px, 5vw, 40px);
+    width: auto;
   }
   
   /* Центральный элемент (бутон) — 
      остаётся «в потоке» и по центру */
   .navbar-center .logo-plant {
-    height: 50px;
+    height: clamp(20px, 5vw, 40px);
     width: auto;
   }
   
-  /* Левый элемент (абсолютно позиционирован) */
-  .navbar-left {
-    position: absolute;
-    left: 20px;      /* отступ слева */
-    top: 50%;        /* чтобы элемент был по центру вертикали */
-    transform: translateY(-50%);
-  }
+
   .logo-botanic {
-    height: 20px;
+    height: clamp(20px, 5vw, 40px);
     width: auto;
   }
   
-  /* Правый элемент (абсолютно позиционирован) */
-  .navbar-right {
-    position: absolute;
-    right: 20px;     /* отступ справа */
-    top: 50%;        /* центр по вертикали */
-    transform: translateY(-50%);
-  }
+
   .menu-icon {
-    height: 30px;
+    height: clamp(20px, 5vw, 40px);
     width: auto;
   }
   
@@ -71,7 +70,7 @@ ul {
     width: 98%;
     max-width: 1555px ;
     text-align: center; /* чтобы <img> был по центру, если нужно */
-    margin: 320px auto;       /* отступы сверху/снизу 40px, слева/справа auto */
+    margin: 150px auto;       /* отступы сверху/снизу 40px, слева/справа auto */
     /* можно добавить отступы сверху/снизу, если надо */
     /* padding: 40px 0; */
   }
