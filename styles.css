@@ -1,0 +1,212 @@
+.inria-sans-bold {
+    font-family: "Inria Sans", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+
+body {
+    background-color: #000;
+    font-family: 'Monda', sans-serif; 
+    font-size: clamp(16px, 1.5vw, 20px);
+    
+    
+    
+}
+
+ul {
+    list-style-type: disc;  /* круглый маркер (по умолчанию) */
+    margin-left: 40px;      /* отступ слева, чтобы буллеты не прилегали к краю */
+    padding-left: 0;        /* или 0; зависит от нужной стилизации */
+    
+  }
+  
+
+/* Общий контейнер навигации */
+.navbar {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;   /* Внутренние отступы */
+    min-height: 80px;  /* Минимальная высота, ниже которой не опустится */
+    background-color: #000;
+    margin-left: 180px;
+    margin-right: 180px;
+  }
+  
+  /* Центральный элемент (бутон) — 
+     остаётся «в потоке» и по центру */
+  .navbar-center .logo-plant {
+    height: 50px;
+    width: auto;
+  }
+  
+  /* Левый элемент (абсолютно позиционирован) */
+  .navbar-left {
+    position: absolute;
+    left: 20px;      /* отступ слева */
+    top: 50%;        /* чтобы элемент был по центру вертикали */
+    transform: translateY(-50%);
+  }
+  .logo-botanic {
+    height: 20px;
+    width: auto;
+  }
+  
+  /* Правый элемент (абсолютно позиционирован) */
+  .navbar-right {
+    position: absolute;
+    right: 20px;     /* отступ справа */
+    top: 50%;        /* центр по вертикали */
+    transform: translateY(-50%);
+  }
+  .menu-icon {
+    height: 30px;
+    width: auto;
+  }
+  
+/* Секция с полноразмерным (или широким) изображением */
+.hero-image-section {
+    width: 98%;
+    max-width: 1555px ;
+    text-align: center; /* чтобы <img> был по центру, если нужно */
+    margin: 320px auto;       /* отступы сверху/снизу 40px, слева/справа auto */
+    /* можно добавить отступы сверху/снизу, если надо */
+    /* padding: 40px 0; */
+  }
+  
+  /* Само изображение */
+  .hero-image {
+    display: block;       /* убираем "белые зазоры" снизу, если inline */
+    max-width: 100%;      /* чтобы не вылезало за экран */
+    height: auto;         /* сохраняем пропорции */
+  }
+
+
+/* TITLE */
+.title {
+    text-align: center;
+    margin-top: 40px;
+    color: #fdfd45;
+}
+
+
+
+h1 span {
+    display: block;
+    
+}
+
+.line {
+    width: 100%;
+    height: 3px;
+    background-color: #fdfd45;
+    margin: 20px auto;
+}
+
+.left {
+    grid-column: 1;  /* Левая колонка */
+  }
+  .right {
+    grid-column: 3;  /* Правая колонка */
+  }
+  
+  .content-section {
+    /* Не забудьте, если нужно отступ сверху/снизу, чтобы линия шла только тут */
+    margin-top: 50px; 
+    margin-bottom: 50px;
+  }
+/* MAIN CONTENT */
+.grid-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 5px 1fr;
+    gap: 40px;
+    align-items: center;
+    width: 80%;
+    margin: 40px auto;
+}
+.grid-container::before {
+    content: "";
+    position: absolute;
+    top: 0; 
+    bottom: 0;            /* тянется от верха контейнера до низа */
+    left: 50%;            /* по центру контейнера, если нужно именно посередине */
+    width: 3px;
+   
+  
+    background-color: #fdfd45;
+    /* можно подстраховаться margin-left: -1.5px, 
+       если хотим чётко по центру (толщина 3px) */
+  }
+
+
+
+/* ТЕКСТ */
+.right, .left {
+    width: 100%;
+    margin: 90px auto;
+}
+
+h1, h2 {
+    font-family: "Inria Sans", serif;
+    font-size: clamp(50px, 2vw, 62px);
+    margin-bottom: 120px;
+    color: #fdfd45;
+    
+}
+
+p, ul {
+    font-size: clamp(30px, 2vw, 40px);
+    line-height: 1.5;
+    color: #fdfd45;
+    text-align: left;
+}
+
+
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* ИЗОБРАЖЕНИЯ */
+img {
+    width: 100%;
+    max-width: 850px;
+    height: auto;
+    display: block;
+    margin: auto;
+    
+}
+.left img {
+    box-shadow: 30px 30px 0 #fdfd45; /* Пример неразмытой цветной «тени» */
+    max-width: 600px;  
+    width: 100%;       /* сожмётся до 100% родителя, но не больше 700px */
+  margin: 0 auto;    /* если хотите центрировать (или left/right, как вам нужно) */
+  display: block;
+  height: auto;                   /* сохраняет пропорции */
+  }
+  .right img {
+    box-shadow: 30px 30px 0 #fdfd45; /* Пример неразмытой цветной «тени» */
+    max-width: 600px;  
+    width: 100%;       /* сожмётся до 100% родителя, но не больше 700px */
+  margin: 0 auto;    /* если хотите центрировать (или left/right, как вам нужно) */
+  display: block;
+  height: auto;                     /* сохраняет пропорции */
+  }
+   
+
+  .footer-logo {
+    width: 520px;
+    margin-bottom: 100px;
+    /* любые другие стили */
+  }
+  .footer-social {
+    width: 200px;
+    margin-right: 80px;
+    margin-top: 30px;
+    margin-bottom: 80px;
+    
+    /* любые другие стили */
+  }
